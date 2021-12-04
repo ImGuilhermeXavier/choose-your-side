@@ -1,11 +1,23 @@
 import React from 'react'
+import styles from './Button.module.scss'
 
-function Button() {
-    return (
-        <div>
-            
-        </div>
-    )
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  className?: string
+  size: 'sm' | 'md' | 'lg'
 }
 
-export default Button
+function Button({ children, className, size, ...props }: ButtonProps) {
+  return (
+    <button
+      {...props}
+      className={`${styles.button} ${styles[size]} ${
+        className ? className : ''
+      }`}
+    >
+      {children}
+    </button>
+  )
+}
+
+export default React.memo(Button)

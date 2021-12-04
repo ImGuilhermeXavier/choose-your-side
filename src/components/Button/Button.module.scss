@@ -1,0 +1,31 @@
+.button {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: solid 2px var(--primary-color);
+  min-width: 190px;
+  min-height: 56px;
+  padding: 0 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:disabled {
+    filter: opacity(0.5);
+  }
+}
+
+.sm {
+  font-size: 0.875rem;
+}
+
+.md {
+  font-size: 1rem;
+}
+
+.lg {
+  font-size: 1.125rem;
+}

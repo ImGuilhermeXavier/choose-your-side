@@ -1,23 +1,19 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Side from './pages/Side/Side'
 import './variables.scss'
 
 function App() {
   return (
-    <main className="app dark">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </main>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route path="/side" element={<Side />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 
