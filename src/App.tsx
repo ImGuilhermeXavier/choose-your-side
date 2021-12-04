@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+import './variables.scss'
 
 function App() {
   return (
-    <div className="App">
+    <main className="app dark">
       <header className="App-header">
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -16,8 +17,8 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
-  );
+    </main>
+  )
 }
 
-export default App;
+export default App

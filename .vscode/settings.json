@@ -1,0 +1,76 @@
+{
+    "editor.tabSize": 4,
+    "editor.tabCompletion": "on",
+    "editor.wordWrap": "on",
+    "workbench.activityBar.visible": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.preferences.quoteStyle": "double",
+    "prettier.jsxSingleQuote": false,
+    "diffEditor.renderSideBySide": true,
+    "editor.formatOnSave": true,
+    "html.autoClosingTags": false,
+    "prettier.tabWidth": 2,
+    "editor.colorDecorators": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "editor.minimap.renderCharacters": false,
+    "breadcrumbs.enabled": false,
+    "color-highlight.markerType": "dot-before",
+    "workbench.statusBar.visible": true,
+    "prettier.trailingComma": "all",
+    "[scss]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.sortOrder": "default",
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapLineLength": 0,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "sass",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (EEx)",
+        "HTML (Eex)",
+        "plist"
+    ],
+    "cSpell.words": [
+        "bejamas",
+        "dimmentions"
+    ]
+}
