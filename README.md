@@ -9,3 +9,5 @@ _Desafio Choose Your Side_
 ✅ Theme Variation
 
 ✅ Unit Test
+
+✅ Image minification by Kraken.io
