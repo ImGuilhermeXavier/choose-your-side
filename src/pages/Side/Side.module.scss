@@ -39,8 +39,8 @@
 }
 
 .back {
-  background: transparent;
-  border: none;
+  cursor: pointer;
+  text-decoration: none;
   color: var(--primary-color);
   display: flex;
   align-items: center;

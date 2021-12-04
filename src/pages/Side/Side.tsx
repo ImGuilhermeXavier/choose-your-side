@@ -4,18 +4,19 @@ import Image from '../../components/Image/Image'
 import { ThemeContext } from '../../ThemeContext'
 import styles from './Side.module.scss'
 import backArrow from '../../static/icons/back-arrow.svg'
+import { NavLink } from 'react-router-dom'
 
 function Side() {
-  const { theme, forceSide, getForceSide, loading, setTheme } =
+  const { theme, forceSide, getForceSide, loading } =
     React.useContext(ThemeContext)
 
   if (!theme || !forceSide) return null
   return (
     <section className={`${theme || ''} ${styles.side}`}>
-      <button className={styles.back} onClick={() => setTheme(null)}>
+      <NavLink to="/" className={styles.back}>
         <img className={styles[theme]} src={backArrow} alt="Arrow back" />
         <span className={styles.backText}>back</span>
-      </button>
+      </NavLink>
       <Button
         onClick={() => getForceSide()}
         disabled={loading}

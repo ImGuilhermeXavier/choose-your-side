@@ -63,13 +63,11 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   }
 
   useEffect(() => {
-    if (!theme) navigate('/')
+    if (!theme) {
+      setForceSide(null)
+      navigate('/')
+    }
   }, [theme, navigate])
-
-  // useEffect(() => {
-  //   const main = document.querySelector('main') as HTMLDivElement
-  //   main.className = theme || ''
-  // }, [theme])
 
   return (
     <ThemeContext.Provider
