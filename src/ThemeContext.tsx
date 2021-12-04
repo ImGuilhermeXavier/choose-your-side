@@ -39,8 +39,8 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
       config: { url },
       data: { name },
     } = await Promise.race([lukePromise, darthVaderPromise])
-    navigate('side')
     setSide(url, name)
+    navigate('side')
     setLoading(false)
     console.log(name)
   }
@@ -61,6 +61,10 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
         navigate('/')
     }
   }
+
+  useEffect(() => {
+    if (!theme) navigate('/')
+  }, [theme, navigate])
 
   // useEffect(() => {
   //   const main = document.querySelector('main') as HTMLDivElement

@@ -11,9 +11,7 @@ function Button({ children, className, size, ...props }: ButtonProps) {
   return (
     <button
       {...props}
-      className={`${styles.button} ${styles[size]} ${
-        className ? className : ''
-      }`}
+      className={`${styles.button} ${styles[size]} ${className || ''}`}
     >
       {children}
     </button>

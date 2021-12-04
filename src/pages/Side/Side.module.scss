@@ -1,0 +1,39 @@
+@import '../../variables.scss';
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  @include desktop {
+    padding: initial;
+  }
+}
+
+.button {
+  order: 1;
+  margin: 2.25rem 0;
+
+  @include desktop {
+    order: initial;
+  }
+}
+
+.img {
+  margin: 2.25rem 0;
+  max-width: 250px;
+  width: 100%;
+
+  @include desktop {
+    margin: 4.5rem 0;
+    width: initial;
+    max-width: initial;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+}

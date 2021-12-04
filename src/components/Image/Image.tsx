@@ -1,11 +1,19 @@
 import React from 'react'
+import styles from './Image.module.scss'
 
-function Image() {
-    return (
-        <div>
-            
-        </div>
-    )
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  className?: string
+  isRounded?: boolean
+}
+
+function Image({ src, alt, isRounded, className }: ImageProps) {
+  return (
+    <img
+      className={`${isRounded ? styles['rounded'] : ''} ${className || ''}`}
+      src={require(`../../static/images/${src}.png`).default}
+      alt={alt}
+    />
+  )
 }
 
 export default Image
