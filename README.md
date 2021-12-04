@@ -5,6 +5,7 @@ _Desafio Choose Your Side_
 ✅ Typescript
 
 ✅ CSS Modules
+
 ✅ Theme Variation
 
 ✅ Unit Test
