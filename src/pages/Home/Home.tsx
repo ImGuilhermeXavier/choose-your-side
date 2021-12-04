@@ -11,7 +11,9 @@ function Home() {
         </h1>
         <h3 className={styles.subtitle}>Frontend Challenge</h3>
       </div>
-      <Button size="lg">START</Button>
+      <Button className={styles.btn} size="lg">
+        START
+      </Button>
     </section>
   )
 }
