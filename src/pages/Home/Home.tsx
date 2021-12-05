@@ -16,7 +16,7 @@ function Home() {
         <h1 className={styles.title}>
           Welcome to <b>iClinic</b>
         </h1>
-        <h3 className={styles.subtitle}>Frontend Challenge</h3>
+        <h2 className={styles.subtitle}>Frontend Challenge</h2>
       </div>
       <Button
         className={styles.btn}
