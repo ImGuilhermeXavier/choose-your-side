@@ -36,41 +36,28 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
     setLoading(true)
     const lukePromise = api.get(LUKE_URL)
     const darthVaderPromise = api.get(DARTH_VADER_URL)
-    const {
-      config: { url },
-      data: { name },
-    } = await Promise.race([lukePromise, darthVaderPromise])
-    setSide(url, name)
-    navigate('side')
-    setLoading(false)
-    console.log(name)
+    try {
+      const {
+        config: { url },
+        data: { name },
+      } = await Promise.race([lukePromise, darthVaderPromise])
+      if (url) setSide(url, name)
+    } catch (e) {
+      setForceSide(null)
+    } finally {
+      setLoading(false)
+    }
   }
 
-  function setSide(url: string | undefined, name: string) {
-    switch (url) {
-      case LUKE_URL:
-        setForceSide({
-          theme: 'light',
-          name,
-        })
-        break
-      case DARTH_VADER_URL:
-        setForceSide({
-          theme: 'dark',
-          name,
-        })
-        break
-      default:
-        setForceSide(null)
-        navigate('/')
-    }
+  function setSide(url: string, name: string) {
+    setForceSide({
+      theme: url === LUKE_URL ? 'light' : 'dark',
+      name,
+    })
   }
 
   useEffect(() => {
-    if (!forceSide) {
-      setForceSide(null)
-      navigate('/')
-    }
+    forceSide ? navigate('side') : navigate('/')
   }, [forceSide, navigate])
 
   return (
