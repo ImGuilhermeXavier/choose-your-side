@@ -11,3 +11,5 @@ _Desafio Choose Your Side_
 ✅ Unit Test
 
 ✅ Image minification by Kraken.io
+
+✅ Lighthouse > 90
