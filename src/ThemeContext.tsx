@@ -6,18 +6,19 @@ const LUKE_URL = 'people/1'
 const DARTH_VADER_URL = 'people/4'
 
 interface InterfaceThemeContext {
-  theme: 'light' | 'dark' | null
-  setTheme: (theme: InterfaceThemeContext['theme']) => void
-  forceSide: string | null
+  forceSide: {
+    theme: 'light' | 'dark'
+    name: string
+  } | null
+  setForceSide: (forceSide: InterfaceThemeContext['forceSide']) => void
   getForceSide: () => void
   loading: boolean
 }
 
 export const ThemeContext = React.createContext<InterfaceThemeContext>({
-  theme: null,
   forceSide: null,
+  setForceSide: () => null,
   getForceSide: () => null,
-  setTheme: () => null,
   loading: false,
 })
 
@@ -27,8 +28,8 @@ interface InterfaceThemeStorage {
 
 export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   const [loading, setLoading] = useState(false)
-  const [theme, setTheme] = useState<InterfaceThemeContext['theme']>(null)
-  const [forceSide, setForceSide] = useState<string | null>(null)
+  const [forceSide, setForceSide] =
+    useState<InterfaceThemeContext['forceSide']>(null)
   const navigate = useNavigate()
 
   async function getForceSide() {
@@ -48,30 +49,33 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   function setSide(url: string | undefined, name: string) {
     switch (url) {
       case LUKE_URL:
-        setTheme('light')
-        setForceSide(name)
+        setForceSide({
+          theme: 'light',
+          name,
+        })
         break
       case DARTH_VADER_URL:
-        setTheme('dark')
-        setForceSide(name)
+        setForceSide({
+          theme: 'dark',
+          name,
+        })
         break
       default:
-        setTheme(null)
         setForceSide(null)
         navigate('/')
     }
   }
 
   useEffect(() => {
-    if (!theme) {
+    if (!forceSide) {
       setForceSide(null)
       navigate('/')
     }
-  }, [theme, navigate])
+  }, [forceSide, navigate])
 
   return (
     <ThemeContext.Provider
-      value={{ theme, forceSide, setTheme, getForceSide, loading }}
+      value={{ forceSide, setForceSide, getForceSide, loading }}
     >
       {children}
     </ThemeContext.Provider>

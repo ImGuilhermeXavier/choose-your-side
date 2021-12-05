@@ -4,11 +4,11 @@ import { ThemeContext } from '../../ThemeContext'
 import styles from './Home.module.scss'
 
 function Home() {
-  const { getForceSide, loading, setTheme } = React.useContext(ThemeContext)
+  const { getForceSide, loading, setForceSide } = React.useContext(ThemeContext)
 
   useEffect(() => {
-    setTheme(null)
-  }, [setTheme])
+    setForceSide(null)
+  }, [setForceSide])
 
   return (
     <section className={styles.home}>
