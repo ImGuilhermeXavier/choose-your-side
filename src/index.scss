@@ -3,12 +3,14 @@
 @font-face {
   font-family: 'Montserrat';
   src: url('static/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: bold;
   src: url('static/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 * {
