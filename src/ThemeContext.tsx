@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from './api'
+import useLocalStorage from './hooks/useLocalStorage'
 
 const LUKE_URL = 'people/1'
 const DARTH_VADER_URL = 'people/4'
@@ -31,6 +32,7 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   const [forceSide, setForceSide] =
     useState<InterfaceThemeContext['forceSide']>(null)
   const navigate = useNavigate()
+  const [sideLocalStorage, setSideLocalStorage] = useLocalStorage('side', '')
 
   async function getForceSide() {
     setLoading(true)
@@ -57,8 +59,18 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   }
 
   useEffect(() => {
-    forceSide ? navigate('side') : navigate('/')
-  }, [forceSide, navigate])
+    if (sideLocalStorage) setForceSide(JSON.parse(sideLocalStorage))
+  }, [sideLocalStorage])
+
+  useEffect(() => {
+    if (forceSide) {
+      setSideLocalStorage(JSON.stringify(forceSide))
+      navigate('side')
+    } else {
+      setSideLocalStorage('')
+      navigate('/')
+    }
+  }, [forceSide, navigate, setSideLocalStorage])
 
   return (
     <ThemeContext.Provider

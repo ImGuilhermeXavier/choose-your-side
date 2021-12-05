@@ -2,6 +2,8 @@ _Desafio Choose Your Side_
 
 ✅ Context API
 
+✅ Hooks + LocalStorage
+
 ✅ Typescript
 
 ✅ CSS Modules
