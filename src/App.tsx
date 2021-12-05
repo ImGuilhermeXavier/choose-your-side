@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <ThemeStorage>
         <main>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div className="loading">Loading...</div>}>
             <Routes>
               <Route path="/*" element={<Home />} />
               <Route path="/side" element={<Side />} />

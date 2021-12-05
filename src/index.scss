@@ -38,3 +38,14 @@ section {
   color: var(--primary-color);
   background: var(--bg);
 }
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  min-height: 100vh;
+  @extend .centered;
+}
