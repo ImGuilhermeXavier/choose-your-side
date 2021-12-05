@@ -12,4 +12,4 @@ _Desafio Choose Your Side_
 
 ✅ Image minification by Kraken.io
 
-✅ Lighthouse > 90
+✅ Lighthouse score > 90
