@@ -14,6 +14,8 @@ function Side() {
     <section className={`${forceSide.theme || ''} ${styles.side}`}>
       <NavLink to="/" className={styles.back}>
         <img
+          width={35}
+          height={25}
           className={styles[forceSide.theme]}
           src={backArrow}
           alt="Arrow back"
@@ -33,6 +35,8 @@ function Side() {
         alt={forceSide.name}
         isRounded={true}
         className={styles.img}
+        width="100%"
+        height="100%"
       />
       <h1 className={styles.title}>
         Your master is <b>{forceSide.name}</b>

@@ -6,12 +6,13 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   isRounded?: boolean
 }
 
-function Image({ src, alt, isRounded, className }: ImageProps) {
+function Image({ src, alt, isRounded, className, ...props }: ImageProps) {
   return (
     <img
       className={`${isRounded ? styles['rounded'] : ''} ${className || ''}`}
       src={require(`../../static/images/${src}.webp`).default}
       alt={alt}
+      {...props}
     />
   )
 }
