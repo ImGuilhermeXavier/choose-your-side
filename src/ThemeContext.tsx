@@ -63,14 +63,14 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   }, [sideLocalStorage])
 
   useEffect(() => {
-    if (forceSide) {
-      setSideLocalStorage(JSON.stringify(forceSide))
-      navigate('side')
-    } else {
-      setSideLocalStorage('')
-      navigate('/')
-    }
-  }, [forceSide, navigate, setSideLocalStorage])
+    forceSide
+      ? setSideLocalStorage(JSON.stringify(forceSide))
+      : setSideLocalStorage('')
+  }, [forceSide, setSideLocalStorage])
+
+  useEffect(() => {
+    forceSide ? navigate('side') : navigate('/')
+  }, [forceSide, navigate])
 
   return (
     <ThemeContext.Provider
