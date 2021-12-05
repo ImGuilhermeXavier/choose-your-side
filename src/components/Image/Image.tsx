@@ -10,7 +10,7 @@ function Image({ src, alt, isRounded, className }: ImageProps) {
   return (
     <img
       className={`${isRounded ? styles['rounded'] : ''} ${className || ''}`}
-      src={require(`../../static/images/${src}.png`).default}
+      src={require(`../../static/images/${src}.webp`).default}
       alt={alt}
     />
   )
