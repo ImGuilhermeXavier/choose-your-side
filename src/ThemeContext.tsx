@@ -53,11 +53,10 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   }
 
   function setSide(url: string, name: string) {
-    const side: InterfaceThemeContext['forceSide'] = {
+    setForceSide({
       theme: url === LUKE_URL ? 'light' : 'dark',
       name,
-    }
-    setForceSide(side)
+    })
   }
 
   useEffect(() => {

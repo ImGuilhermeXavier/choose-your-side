@@ -6,7 +6,7 @@ const useLocalStorage = (
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
   const [state, setState] = React.useState(() => {
     const local = window.localStorage.getItem(key)
-    return local ? local : inicial
+    return local || inicial
   })
 
   React.useEffect(() => {
