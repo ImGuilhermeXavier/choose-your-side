@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { BrowserRouter } from 'react-router-dom'
-import App from '../../App'
-import { renderDarthVadeSide } from '../../App.test'
 import { ThemeContext } from '../../ThemeContext'
 import Side from './Side'
 
@@ -45,11 +43,22 @@ test('Click on Choose your path button should be disabled', async () => {
   expect(screen.getByRole('button')).toHaveAttribute('disabled')
 })
 
-// test('Click on back btn', async () => {
-//   renderDarthVadeSide()
-//   const buttonElement = await screen.findByText(/back/i)
-//   userEvent.click(buttonElement)
-//   const textElement = await screen.findByText(/Frontend Challenge/i)
-
-//   expect(textElement).toBeInTheDocument()
-// })
+test('Click on back btn should return to Home', async () => {
+  const name = 'Darth Vader'
+  render(
+    <ThemeContext.Provider
+      value={{
+        forceSide: { theme: 'light', name },
+        setForceSide: () => null,
+        getForceSide: () => null,
+        loading: false,
+      }}
+    >
+      <Side />
+    </ThemeContext.Provider>,
+    { wrapper: BrowserRouter },
+  )
+  const buttonElement = await screen.findByText(/back/i)
+  userEvent.click(buttonElement)
+  expect(window.location.pathname).toContain('/')
+})
