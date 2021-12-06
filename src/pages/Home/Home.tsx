@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react'
 import Button from '../../components/Button/Button'
-import useLocalStorage from '../../hooks/useLocalStorage'
 import { ThemeContext } from '../../ThemeContext'
 import styles from './Home.module.scss'
 
 function Home() {
   const { getForceSide, loading, setForceSide } = React.useContext(ThemeContext)
-  const [, setSideLocalStorage] = useLocalStorage('side', '')
 
   useEffect(() => {
     setForceSide(null)
-  }, [setForceSide, setSideLocalStorage])
+  }, [setForceSide])
 
   return (
     <section className={styles.home}>
