@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import { ThemeContext } from '../../ThemeContext'
 import styles from './Side.module.scss'
 import backArrow from '../../static/icons/back-arrow.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Side() {
   const { forceSide, getForceSide, loading } = React.useContext(ThemeContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!forceSide) navigate('/')
+  }, [forceSide, navigate])
 
   if (!forceSide) return null
   return (

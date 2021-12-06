@@ -32,7 +32,7 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   const [forceSide, setForceSide] =
     useState<InterfaceThemeContext['forceSide']>(null)
   const navigate = useNavigate()
-  const [sideLocalStorage, setSideLocalStorage] = useLocalStorage('side', '')
+  const [, setSideLocalStorage] = useLocalStorage('side', '')
 
   async function getForceSide() {
     setLoading(true)
@@ -44,6 +44,7 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
         data: { name },
       } = await Promise.race([lukePromise, darthVaderPromise])
       if (url) setSide(url, name)
+      navigate('side')
     } catch (e) {
       setForceSide(null)
     } finally {
@@ -52,25 +53,23 @@ export const ThemeStorage = ({ children }: InterfaceThemeStorage) => {
   }
 
   function setSide(url: string, name: string) {
-    setForceSide({
+    const side: InterfaceThemeContext['forceSide'] = {
       theme: url === LUKE_URL ? 'light' : 'dark',
       name,
-    })
+    }
+    setForceSide(side)
   }
 
   useEffect(() => {
-    if (sideLocalStorage) setForceSide(JSON.parse(sideLocalStorage))
-  }, [sideLocalStorage])
+    const item = localStorage.getItem('side')
+    if (item) setForceSide(JSON.parse(item))
+  }, [])
 
   useEffect(() => {
     forceSide
       ? setSideLocalStorage(JSON.stringify(forceSide))
       : setSideLocalStorage('')
   }, [forceSide, setSideLocalStorage])
-
-  useEffect(() => {
-    forceSide ? navigate('side') : navigate('/')
-  }, [forceSide, navigate])
 
   return (
     <ThemeContext.Provider
