@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import NotFound from './pages/NotFound/NotFound'
 import { ThemeStorage } from './ThemeContext'
 import './variables.scss'
 
@@ -15,14 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/side" element={<Side />} />
-              <Route
-                path="*"
-                element={
-                  <div className="not-found">
-                    Error: 404 <br /> Page not found
-                  </div>
-                }
-              />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>

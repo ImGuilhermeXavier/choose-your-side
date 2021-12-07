@@ -3,8 +3,8 @@ import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import { ThemeContext } from '../../ThemeContext'
 import styles from './Side.module.scss'
-import backArrow from '../../static/icons/back-arrow.svg'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Back from '../../components/Back/Back'
 
 function Side() {
   const { forceSide, getForceSide, loading } = React.useContext(ThemeContext)
@@ -17,16 +17,7 @@ function Side() {
   if (!forceSide) return null
   return (
     <section className={`${forceSide.theme || ''} ${styles.side}`}>
-      <NavLink to="/" className={styles.back}>
-        <img
-          width={35}
-          height={25}
-          className={styles[forceSide.theme]}
-          src={backArrow}
-          alt="Arrow back"
-        />
-        <span className={styles.backText}>back</span>
-      </NavLink>
+      <Back to="/" />
       <Button
         onClick={() => getForceSide()}
         disabled={loading}

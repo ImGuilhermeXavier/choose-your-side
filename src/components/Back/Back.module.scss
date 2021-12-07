@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.back {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 35px;
+  left: 35px;
+
+  @include desktop {
+    left: 70px;
+  }
+}
+
+.backText {
+  font-size: 1.125rem;
+  margin-left: 20px;
+}
+
+img.light {
+  filter: brightness(0.2);
+}
+
+.black-type {
+  filter: brightness(0.2);
+}
