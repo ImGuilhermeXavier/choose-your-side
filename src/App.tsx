@@ -15,6 +15,14 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/side" element={<Side />} />
+              <Route
+                path="*"
+                element={
+                  <div className="not-found">
+                    Error: 404 <br /> Page not found
+                  </div>
+                }
+              />
             </Routes>
           </Suspense>
         </main>
