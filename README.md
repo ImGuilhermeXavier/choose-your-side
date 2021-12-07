@@ -2,20 +2,20 @@ _Desafio Choose Your Side_
 
 Live on heroku [https://choose-your-side.herokuapp.com]
 
-✅ Context API
+✅  Context API
 
-✅ Hooks + LocalStorage
+✅  Hooks + LocalStorage
 
-✅ Lazyload + Code splitting
+✅  Lazyload + Code splitting
 
 ✅ Typescript
 
-✅ CSS Modules
+✅  CSS Modules
 
-✅ Theme Variation
+✅  Theme Variation
 
-✅ Unit Test
+✅  Unit Test
 
-✅ Image minification by Kraken.io
+✅  Image minification by Kraken.io
 
-✅ Lighthouse score > 90
+✅  Lighthouse score > 90
