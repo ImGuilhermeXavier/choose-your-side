@@ -28,7 +28,7 @@ function renderDarthVadeSide() {
 describe('Check renderer and navigation', () => {
   test('Renders lazy main page', async () => {
     render(<App />)
-    const textElement = await screen.findByText(/Frontend Challenge/i)
+    const textElement = await screen.findByText(/Guilherme Caçador/i)
     expect(textElement).toBeInTheDocument()
   })
 
