@@ -14,9 +14,9 @@ function Home() {
     <section className={styles.home}>
       <div className={styles.welcome}>
         <h1 className={styles.title}>
-          Welcome to <b>iClinic</b>
+          Welcome, <b>choose your side</b>
         </h1>
-        <h2 className={styles.subtitle}>Frontend Challenge</h2>
+        <h2 className={styles.subtitle}>Guilherme Caçador</h2>
       </div>
       <Button
         className={styles.btn}
